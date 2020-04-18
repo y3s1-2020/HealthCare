@@ -128,12 +128,7 @@ input[type=text],input[type=email] ,input[type=file]  {
                     </a>
                 </li>
                
-                <li>
-                    <a href="appoinment.jsp">
-                        <i class="pe-7s-plus"></i>
-                        Appoinment
-                    </a>
-                </li>
+               
               
             
                 <li>
@@ -188,7 +183,7 @@ input[type=text],input[type=email] ,input[type=file]  {
 								String name = (String) session.getAttribute("username");
 								
 
-								PreparedStatement pss = con.prepareStatement("select *,sum(hosFees+doctorfees)  from appoiment,patient,hospital,doctor where  username=? and pid=patientID and hid=hosID and did=doctorID and createDate=DATE(NOW())");
+								PreparedStatement pss = conn.prepareStatement("select *,sum(hosFees+doctorfees)  from appoiment,patient,hospital,doctor where  username=? and pid=patientID and hid=hosID and did=doctorID and createDate=DATE(NOW())");
 
 								pss.setString(1, name);
 								ResultSet rss = pss.executeQuery();

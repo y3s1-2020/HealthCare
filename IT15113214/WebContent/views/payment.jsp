@@ -128,12 +128,7 @@ input[type=text],input[type=email] ,input[type=file]  {
                     </a>
                 </li>
                
-                <li>
-                    <a href="appoinment.jsp">
-                        <i class="pe-7s-plus"></i>
-                        Appoinment
-                    </a>
-                </li>
+              
               
             
                 <li>

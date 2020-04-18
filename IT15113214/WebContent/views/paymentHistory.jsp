@@ -90,12 +90,7 @@
                     </a>
                 </li>
                
-                <li>
-                    <a href="appoinment.jsp">
-                        <i class="pe-7s-plus"></i>
-                        Appoinment
-                    </a>
-                </li>
+               
               
             
                 <li>
@@ -166,9 +161,10 @@
 			String name = (String) session.getAttribute("username");
 			
 
-			PreparedStatement pss = con.prepareStatement("select *  from payment,patient where  username=? ");
+			PreparedStatement pss = conn.prepareStatement("SELECT * FROM `payment` ,`patient`,`appoiment` WHERE username=? and  patientID=pid and appoiment=appoimentID");
 
 			pss.setString(1, name);
+		
 			ResultSet rss = pss.executeQuery();
 
 

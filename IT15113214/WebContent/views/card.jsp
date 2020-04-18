@@ -128,12 +128,7 @@ input[type=text],input[type=email] ,input[type=file]  {
                     </a>
                 </li>
                
-                <li>
-                    <a href="appoinment.jsp">
-                        <i class="pe-7s-plus"></i>
-                        Appoinment
-                    </a>
-                </li>
+               
               
             
                 <li>
@@ -180,7 +175,7 @@ input[type=text],input[type=email] ,input[type=file]  {
 								Connection conn =database.getConnection();
 								String name = (String) session.getAttribute("username");
 
-								PreparedStatement pss = con.prepareStatement("select * from patient,payment where username=? and payDate=DATE(NOW())");
+								PreparedStatement pss = con.prepareStatement("SELECT * FROM `payment` ,`patient`,`appoiment` WHERE username=? and  patientID=pid and appoiment=appoimentID and paydate=DATE(NOW()) ");
 
 								
 								pss.setString(1, name);
